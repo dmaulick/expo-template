@@ -6,6 +6,8 @@ module.exports = function (api) {
   return {
     presets: ["babel-preset-expo"],
     plugins: [
+      // Relay plugin should be first plugin to run - https://relay.dev/docs/getting-started/installation-and-setup/#set-up-babel-plugin-relay
+      require.resolve("relay"),
       require.resolve("expo-router/babel"),
       [
         'transform-inline-environment-variables',
